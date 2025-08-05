@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart BBD 2025 Poster</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for Flipkart branding */
+        .text-flipkart-blue {
+            color: #2874f0; /* Flipkart's primary blue */
+        }
+        .bg-flipkart-blue {
+            background-color: #2874f0;
+        }
+        .border-flipkart-blue {
+            border-color: #2874f0;
+        }
+        .text-dark-blue {
+            color: #1a237e; /* Darker blue for headings */
+        }
+        /* Stylized Flipkart logo text */
+        .flipkart-logo-text {
+            background: linear-gradient(to right, #2874f0, #0056b3); /* Blue gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900; /* Extra bold */
+            font-size: 3rem; /* Larger size */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Stronger shadow */
+        }
+
+        /* Updated: Styles for the Big Billion Days circle (3D effect with blinking and darker colors) */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .bbd-circle {
+            background: radial-gradient(circle at 30% 30%, #ff8c00, #cc5500); /* Darker radial gradient for 3D sphere effect (Dark Orange to Darker Orange) */
+            border-color: #ffeb3b; /* Yellow border */
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.8), /* Darker glow effect */
+                        0 5px 15px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+            animation: blink 2s infinite; /* Blinking animation */
+        }
+        .bbd-circle:hover {
+            transform: scale(1.05) rotate(5deg); /* Slight pop and rotate on hover */
+        }
+
+
+        /* Keyframe animation for body background movement */
+        @keyframes backgroundPan {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Updated: Body background with Flipkart blue, 'BIG Billion Day Sale' pattern, and animation */
+        body {
+            background-color: #2874f0; /* Flipkart blue */
+            /* Placeholder for a repeating 'BIG Billion Day Sale' pattern */
+            background-image: url('https://placehold.co/250x100/2874f0/ffffff/png?text=BIG+Billion+Day+Sale');
+            background-size: 300px 120px; /* Size of the repeating pattern */
+            background-position: center center;
+            background-repeat: repeat; /* Repeat the pattern */
+            animation: backgroundPan 60s linear infinite; /* Subtle animation for a dynamic feel */
+            
+            display: flex; /* Use flexbox for centering the poster */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 1rem; /* Add some padding around the poster */
+            position: relative; /* For the overlay */
+        }
+        /* Overlay for the body background image to ensure readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(40, 116, 240, 0.6); /* Slightly more opaque Flipkart blue overlay */
+            z-index: 0;
+        }
+
+        /* Updated: The main poster div now has the Flipkart yellow background with an image */
+        .poster {
+            background-color: #ffe600; /* Flipkart yellow fallback */
+            background-image: url('https://placehold.co/800x600/ffe600/ff0000/png?text=BIG+SALE+OFFERS'); /* Sale-related image on yellow background */
+            background-size: cover; /* Cover the entire poster area */
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative; /* Ensure poster content is above the body overlay */
+            z-index: 1;
+            max-width: 4xl; /* Tailwind class for max-width */
+            width: 100%; /* Full width within max-width */
+            padding: 1.5rem 2.5rem; /* Tailwind classes for padding p-6 md:p-10 */
+            border-radius: 0.75rem; /* Tailwind class for rounded-xl */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Tailwind class for shadow-2xl */
+            border: 4px solid #2874f0; /* Tailwind class for border-4 border-flipkart-blue */
+            overflow: hidden; /* Ensure content doesn't overflow */
+        }
+
+        /* Overlay for the poster's yellow background image to ensure readability */
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 230, 0, 0.6); /* Semi-transparent yellow overlay */
+            z-index: -1; /* Place behind content but above background image */
+        }
+
+        /* Adjust text colors for better contrast on yellow background */
+        .poster h1, .poster .text-dark-blue, .poster .text-gray-700 {
+            color: #1a237e; /* Keep dark blue for headings and dark gray for general text */
+        }
+        .poster .text-red-600 {
+            color: #dc2626; /* Keep red for urgency */
+        }
+        .poster .text-green-600 {
+            color: #16a34a; /* Keep green for positive numbers */
+        }
+        .poster .text-yellow-500 {
+            color: #f59e0b; /* Keep yellow for icons */
+        }
+        .poster .text-gray-800 {
+            color: #1f2937; /* Darker text for table content */
+        }
+        .poster .text-gray-500 {
+            color: #6b7280; /* Lighter text for small notes */
+        }
+
+        /* Specific style for the selected text to make it darker */
+        .poster .text-darker-gray {
+            color: #374151; /* A darker gray shade */
+        }
+    </style>
+</head>
+<body>
+    <div class="poster max-w-4xl w-full p-6 md:p-10 rounded-xl shadow-2xl border-4 border-flipkart-blue overflow-hidden">
+        <!-- Header Logos -->
+        <div class="flex justify-between items-center mb-6">
+            <!-- Flipkart Logo -->
+            <div class="flex items-center">
+                <span class="flipkart-logo-text text-4xl md:text-5xl">Flipkart</span>
+            </div>
+            <!-- The Big Billion Days Logo -->
+            <div class="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full bbd-circle border-4 flex items-center justify-center shadow-lg">
+                    <div class="text-center text-white font-black text-xs md:text-sm leading-tight p-2">
+                        THE BIG<br>BILLION<br>DAYS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-dark-blue text-4xl md:text-6xl font-extrabold text-left mb-2 leading-tight">
+            पैसा कमाने का <br>सुनहरा मौका -<br>BBD 2025!
+        </h1>
+
+        <!-- Location and Call to Action -->
+        <div class="flex items-center text-dark-blue text-xl md:text-2xl font-bold mb-4">
+            <svg class="w-6 h-6 md:w-8 md:h-8 mr-2 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Flipkart - BINOLA</span>
+        </div>
+        <p class="text-red-600 text-lg md:text-xl font-bold mb-6">
+            Hurry! Join BBD and get amazing prizes and rewards! Hiring is on!
+        </p>
+
+        <!-- Earning Potential Summary -->
+        <div class="flex items-center text-dark-blue text-xl md:text-2xl font-bold mb-4">
+            <span class="text-yellow-500 text-3xl md:text-4xl mr-2">💰</span>
+            <span>1 month earning potential:</span>
+            <span class="text-green-600 text-2xl md:text-3xl font-extrabold ml-2">₹20,000 se 30,000</span>
+        </div>
+        <p class="text-gray-700 text-sm md:text-base mb-6 ml-10">
+            (Fixed salary + additional bonus + night shift allowance + BBD bonus)
+        </p>
+
+        <!-- Facilities Section (Checklist Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 mb-6">
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-green-500 text-2xl mr-2">✔️</span> Fixed salary
+            </div>
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-green-500 text-2xl mr-2">✔️</span> State minimum wage
+            </div>
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-green-500 text-2xl mr-2">🗓️</span> Weekly off
+            </div>
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-green-500 text-2xl mr-2">➕</span> Leave encashment
+            </div>
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-green-500 text-2xl mr-2">✌️</span> Double pay on 2 October
+            </div>
+            <div class="flex items-center text-dark-blue text-lg md:text-xl font-semibold">
+                <span class="text-yellow-500 text-2xl mr-2">⭐</span> Earn great rewards for great work every day!
+            </div>
+        </div>
+
+        <!-- Detailed Earning Potential Table -->
+        <div class="bg-blue-600 text-white p-4 rounded-t-lg text-center font-bold text-lg md:text-xl">
+            BBD Earning Potential
+            <p class="text-sm font-normal">(Role: PV Operator, Picker, Packer)</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg mb-8 border border-blue-600">
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr class="bg-blue-50">
+                        <th class="p-3 border-b border-gray-200 text-gray-700 font-semibold text-base md:text-lg rounded-tl-lg">Component</th>
+                        <th class="p-3 border-b border-gray-200 text-gray-700 font-semibold text-base md:text-lg rounded-tr-lg text-right">Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Take Home Salary</td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">12,434</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Attendance Bonus</td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">500</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Leave Encashment <span class="text-xs text-darker-gray block">(यदि आप Week Off के अलावा कोई भी छुट्टी नहीं लेते हैं)</span></td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">912</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Referral Bonus <span class="text-xs text-gray-500 block">(यदि आप किसी को जॉइन कराते हैं जो 45 दिन तक कार्यरत रहता है) ₹1000प्रति व्यक्ति * 5 रेफरल</span></td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">5,000</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">OT (If you complete 10 OT shifts in a month)</td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">1,200</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Night Shift Allowance <span class="text-xs text-gray-500 block">(यदि आप 15 नाइट शिफ्ट करते हैं)</span></td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">1,800</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 text-gray-800 text-base md:text-lg">Extra Attendance Bonus <span class="text-xs text-gray-500 block">(15 Aug से 15 Sept तक 100% उपस्थिति)</span></td>
+                        <td class="p-3 text-gray-800 text-base md:text-lg text-right font-semibold">1,500</td>
+                    </tr>
+                    <tr class="bg-blue-100 font-bold text-blue-800">
+                        <td class="p-3 text-base md:text-lg rounded-bl-lg">Total Potential Earning</td>
+                        <td class="p-3 text-base md:text-lg text-right rounded-br-lg">₹23,346</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Special Treats Section -->
+        <div class="flex items-center text-dark-blue text-xl md:text-2xl font-bold mb-4">
+            <span class="text-red-500 text-3xl md:text-4xl mr-2">🍔</span>
+            <span>SPECIAL TREATS:</span>
+        </div>
+        <ul class="list-none text-gray-700 text-base md:text-lg space-y-2 ml-10 mb-6">
+            <li>Free and delicious food for all!</li>
+            <li>Free pick-up and drop from BILASPUR bus stand!</li>
+        </ul>
+
+        <!-- Footer -->
+        <div class="footer text-center text-gray-600 text-sm md:text-base mt-8 pt-4 border-t border-gray-200">
+            <p class="font-semibold text-lg">🎉 जुड़ें Flipkart के साथ और बनाएं इस BBD को कमाई और अवसरों से भरपूर!</p>
+        </div>
+    </div>
+</body>
+</html>
